@@ -4,7 +4,7 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 import hashingalgo.sha256;
-public class main {
+public class securo {
     public static void main(String[] args) {
         // Create the frame
          
