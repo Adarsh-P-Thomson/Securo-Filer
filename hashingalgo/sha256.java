@@ -1,9 +1,12 @@
 package hashingalgo;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 
-public class HashConverter {
+public class sha256 {
     
     
     public static String getSHA256(String input) {
@@ -38,6 +41,31 @@ public class HashConverter {
             }
             return hexString.toString();
         } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public static String getFileHash(File file, String algorithm) //process file
+    {
+        try (FileInputStream fis = new FileInputStream(file)) {
+            MessageDigest digest = MessageDigest.getInstance(algorithm);
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            
+            while ((bytesRead = fis.read(buffer)) != -1) {
+                digest.update(buffer, 0, bytesRead);
+            }
+            
+            byte[] hash = digest.digest();
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException | IOException e) {
             throw new RuntimeException(e);
         }
     }

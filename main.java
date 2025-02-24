@@ -3,12 +3,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
-import hashingalgo.HashConverter;
+import hashingalgo.sha256;
 public class main {
     public static void main(String[] args) {
         // Create the frame
-        HashConverter o1Converter=new HashConverter();// Hashcoverter to convert to SHA 256 Algorithms and its types
-        o1Converter.main("hi hello");
+         
+         sha256.main("hi hello");// Hashcoverter to convert to SHA 256 Algorithms and its types
         JFrame frame = new JFrame("Securo Filer");
         
         // Set the icon image
