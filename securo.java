@@ -13,7 +13,7 @@ public class securo {
         
         // Set the icon image
         try {
-            Image icon = ImageIO.read(new File("download.png")); // Make sure the path is correct
+            Image icon = ImageIO.read(new File("models/download.png")); // Make sure the path is correct
             frame.setIconImage(icon);
         } catch (IOException e) {
             System.err.println("Icon image not found: " + e.getMessage());
