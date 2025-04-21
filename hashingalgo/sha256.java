@@ -26,7 +26,7 @@ public class sha256 {
     }
     
     private static String getHash(String input, String algorithm) {
-        try {
+        try { //read file and convert to hash code
             MessageDigest digest = MessageDigest.getInstance(algorithm);
             byte[] hash = digest.digest(input.getBytes());
             
@@ -70,10 +70,16 @@ public class sha256 {
         }
     }
     
-    public static void main(String input) {
+    public static void main(String argsString) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the Striing:");
+        String input=scanner.nextLine();
+        System.out.println("Enter the file loc:");
+        String loc=scanner.nextLine();
+        File fl=new File(loc);
         
-        
+        System.out.println(getFileHash(fl, "SHA-256"));
+
         System.out.println("SHA-256: " + getSHA256(input));
         System.out.println("SHA-512: " + getSHA512(input));
         System.out.println("SHA3-256: " + getSHA3_256(input));
