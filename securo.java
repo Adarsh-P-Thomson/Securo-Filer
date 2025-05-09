@@ -10,6 +10,8 @@ public class securo {
          
          sha256.main("hi hello");// Hashcoverter to convert to SHA 256 Algorithms and its types
         JFrame frame = new JFrame("Securo Filer");
+        JLabel txtonscr=new JLabel("Testing");
+        txtonscr.setText("Testing");
         
         // Set the icon image
         try {
