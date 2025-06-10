@@ -8,7 +8,7 @@ public class securo {
     public static void main(String[] args) {
         // Create the frame
          
-         sha256.main("hi hello");// Hashcoverter to convert to SHA 256 Algorithms and its types
+         sha256.main("hi hello");
         JFrame frame = new JFrame("Securo Filer");
         JLabel txtonscr=new JLabel("Testing");
         txtonscr.setText("Testing");
