@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.securofiler.controller.MainController">
+    <VBox spacing="10" alignment="CENTER" layoutX="20" layoutY="20">
+        <Label text="Welcome to Securo Filer" styleClass="header"/>
+        <TextField fx:id="filePathField" promptText="Enter file path or select a file"/>
+        <Button text="Encrypt" onAction="#handleEncrypt"/>
+        <Button text="Decrypt" onAction="#handleDecrypt"/>
+    </VBox>
+</AnchorPane>
