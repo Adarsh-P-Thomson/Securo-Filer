@@ -1,0 +1,52 @@
+/* 
+This CSS file contains styles for the JavaFX application, defining the look and feel of the UI components.
+*/
+
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+    -fx-base: #f0f0f0;
+    -fx-background-color: #ffffff;
+}
+
+.button {
+    -fx-background-color: #4CAF50; /* Green */
+    -fx-text-fill: white;
+    -fx-padding: 10px 20px;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #45a049; /* Darker green */
+}
+
+.text-field {
+    -fx-border-color: #ccc;
+    -fx-border-radius: 5px;
+    -fx-padding: 10px;
+}
+
+.text-field:focused {
+    -fx-border-color: #4CAF50; /* Green */
+}
+
+.label {
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+}
+
+.alert {
+    -fx-background-color: #ffdddd; /* Light red */
+    -fx-text-fill: #d8000c; /* Dark red */
+    -fx-padding: 10px;
+    -fx-border-color: #d8000c;
+    -fx-border-radius: 5px;
+}
+
+.alert.success {
+    -fx-background-color: #ddffdd; /* Light green */
+    -fx-text-fill: #005500; /* Dark green */
+    -fx-border-color: #005500;
+}
