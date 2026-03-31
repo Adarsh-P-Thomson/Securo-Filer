@@ -1,52 +1,123 @@
-/* 
-This CSS file contains styles for the JavaFX application, defining the look and feel of the UI components.
-*/
+/* Modern UI Styles for Securo Filer */
 
 .root {
-    -fx-font-family: "Segoe UI";
-    -fx-font-size: 14px;
-    -fx-base: #f0f0f0;
+    -fx-font-family: "Segoe UI", "San Francisco", "Roboto", sans-serif;
+    -fx-background-color: transparent;
+}
+
+.main-window {
+    -fx-background-color: #f7f9fc;
+}
+
+/* Sidebar Styles */
+.sidebar {
     -fx-background-color: #ffffff;
+    -fx-border-color: transparent #e2e8f0 transparent transparent;
+    -fx-border-width: 0 1 0 0;
+    -fx-pref-width: 250px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.03), 10, 0, 2, 0);
 }
 
-.button {
-    -fx-background-color: #4CAF50; /* Green */
-    -fx-text-fill: white;
-    -fx-padding: 10px 20px;
-    -fx-font-size: 14px;
-    -fx-border-radius: 5px;
-    -fx-background-radius: 5px;
+.logo-text {
+    -fx-font-size: 24px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #1a202c;
 }
 
-.button:hover {
-    -fx-background-color: #45a049; /* Darker green */
+.nav-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #4a5568;
+    -fx-font-size: 15px;
+    -fx-font-weight: 600;
+    -fx-padding: 12px 15px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
 }
 
-.text-field {
-    -fx-border-color: #ccc;
-    -fx-border-radius: 5px;
-    -fx-padding: 10px;
+.nav-btn:hover {
+    -fx-background-color: #edf2f7;
+    -fx-text-fill: #2b6cb0;
 }
 
-.text-field:focused {
-    -fx-border-color: #4CAF50; /* Green */
+.active-nav {
+    -fx-background-color: #ebf4ff;
+    -fx-text-fill: #3182ce;
 }
 
-.label {
-    -fx-text-fill: #333;
+.version-text {
+    -fx-text-fill: #a0aec0;
+    -fx-font-size: 12px;
+}
+
+/* Content Area */
+.content-area {
+    -fx-background-color: #f7f9fc;
+    -fx-padding: 40px;
+}
+
+.title-text {
+    -fx-font-size: 28px;
     -fx-font-weight: bold;
+    -fx-text-fill: #1a202c;
 }
 
-.alert {
-    -fx-background-color: #ffdddd; /* Light red */
-    -fx-text-fill: #d8000c; /* Dark red */
-    -fx-padding: 10px;
-    -fx-border-color: #d8000c;
-    -fx-border-radius: 5px;
+.subtitle-text {
+    -fx-font-size: 14px;
+    -fx-text-fill: #718096;
+    -fx-line-spacing: 4px;
 }
 
-.alert.success {
-    -fx-background-color: #ddffdd; /* Light green */
-    -fx-text-fill: #005500; /* Dark green */
-    -fx-border-color: #005500;
+.field-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3748;
+}
+
+/* Inputs & Combobox */
+.input-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cbd5e0;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 10px 12px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #2d3748;
+}
+
+.input-field:focused {
+    -fx-border-color: #3182ce;
+    -fx-effect: dropshadow(three-pass-box, rgba(49,130,206,0.3), 5, 0, 0, 0);
+}
+
+/* Standard Button */
+.action-btn {
+    -fx-background-color: #edf2f7;
+    -fx-text-fill: #2d3748;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-padding: 10px 16px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+}
+.action-btn:hover {
+    -fx-background-color: #e2e8f0;
+}
+
+/* Primary / Action Button */
+.primary-btn {
+    -fx-background-color: #3182ce;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 12px 24px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(49,130,206,0.4), 8, 0, 0, 4);
+}
+
+.primary-btn:hover {
+    -fx-background-color: #2b6cb0;
 }

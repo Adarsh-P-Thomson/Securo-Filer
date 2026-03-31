@@ -1,8 +1,9 @@
 package com.securofiler.model;
 
+import javafx.concurrent.Task;
 import java.nio.file.Path;
 
-public class EncryptionTask {
+public class EncryptionTask extends Task<Void> {
     private Path filePath;
     private String keySource;
     private boolean isEncrypted;
@@ -11,6 +12,13 @@ public class EncryptionTask {
         this.filePath = filePath;
         this.keySource = keySource;
         this.isEncrypted = false;
+    }
+
+    @Override
+    protected Void call() throws Exception {
+        // Implement encryption logic here
+        // updateProgress(progress, maxProgress);
+        return null;
     }
 
     public Path getFilePath() {

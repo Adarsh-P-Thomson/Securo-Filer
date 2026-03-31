@@ -1,9 +1,10 @@
 package com.securofiler.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.ComboBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -11,58 +12,38 @@ import java.io.File;
 public class MainController {
 
     @FXML
-    private TextField keySourceField;
+    private TextField filePathField;
 
     @FXML
-    private Button encryptButton;
+    private ComboBox<String> keyMethodCombo;
 
     @FXML
-    private Button decryptButton;
+    private PasswordField passwordField;
 
     @FXML
-    private Label statusLabel;
+    private VBox passwordContainer;
 
     @FXML
     public void initialize() {
-        // Initialization logic if needed
-    }
-
-    @FXML
-    private void handleEncryptButtonAction() {
-        // Logic to handle encryption
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select File to Encrypt");
-        File file = fileChooser.showOpenDialog(encryptButton.getScene().getWindow());
-        if (file != null) {
-            // Call encryption service with the selected file and key source
-            statusLabel.setText("Encrypting: " + file.getName());
-        } else {
-            statusLabel.setText("Encryption cancelled.");
+        if (keyMethodCombo != null) {
+            keyMethodCombo.getSelectionModel().selectedItemProperty().addListener((obs, oldVal, newVal) -> {
+                if ("Key Image (Steganographic Seed)".equals(newVal)) {
+                    // Update UI for File based key
+                    passwordField.setPromptText("Path to Key Image...");
+                } else {
+                    passwordField.setPromptText("Enter your secure password...");
+                }
+            });
         }
     }
 
     @FXML
-    private void handleDecryptButtonAction() {
-        // Logic to handle decryption
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select File to Decrypt");
-        File file = fileChooser.showOpenDialog(decryptButton.getScene().getWindow());
-        if (file != null) {
-            // Call decryption service with the selected file and key source
-            statusLabel.setText("Decrypting: " + file.getName());
-        } else {
-            statusLabel.setText("Decryption cancelled.");
-        }
+    private void handleEncrypt() {
+        System.out.println("Encrypting " + filePathField.getText() + " with " + keyMethodCombo.getValue());
     }
 
     @FXML
-    private void handleKeySourceSelection() {
-        // Logic to handle key source selection
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Select Key Source");
-        File file = fileChooser.showOpenDialog(keySourceField.getScene().getWindow());
-        if (file != null) {
-            keySourceField.setText(file.getAbsolutePath());
-        }
+    private void handleDecrypt() {
+        System.out.println("Decrypting...");
     }
 }

@@ -60,12 +60,12 @@ public class EncryptController {
         String keySourcePath = keySourceField.getText();
         String filePath = fileToEncryptField.getText();
 
-        if (keySourcePath.isEmpty() || filePath.isEmpty()) {
+        if (keySourcePath == null || keySourcePath.isEmpty() || filePath == null || filePath.isEmpty()) {
             // Show error message
             return;
         }
 
-        EncryptionTask task = new EncryptionTask(filePath, keySourcePath);
+        EncryptionTask task = new EncryptionTask(new File(filePath).toPath(), keySourcePath);
         progressBar.progressProperty().bind(task.progressProperty());
 
         task.setOnSucceeded(event -> {

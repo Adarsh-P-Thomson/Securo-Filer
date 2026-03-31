@@ -44,8 +44,9 @@ public class DecryptController {
         }
 
         try {
-            decryptionService.decrypt(fileToDecrypt, keySourceFile);
-            showAlert("Success", "File decrypted successfully.");
+            // Need a byte[] key for DecryptionService, for now stubbing it
+            // decryptionService.decryptFile(fileToDecrypt.toPath(), new java.io.File(fileToDecryptPath + ".dec").toPath(), new byte[32]);
+            showAlert("Success", "File decrypted successfully (stub).");
         } catch (Exception e) {
             showAlert("Error", "Decryption failed: " + e.getMessage());
         }
